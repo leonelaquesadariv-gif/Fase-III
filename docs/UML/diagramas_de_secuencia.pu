@@ -1,0 +1,36 @@
+@startuml
+title Secuencia - Matrícula de Cursos
+
+actor Estudiante
+
+participant "Sistema" as Sistema
+participant "Curso" as Curso
+participant "Matrícula" as Matricula
+
+Estudiante -> Sistema : Iniciar sesión
+Sistema --> Estudiante : Acceso permitido
+
+Estudiante -> Sistema : Consultar cursos
+
+Sistema -> Curso : Obtener oferta
+Curso --> Sistema : Lista de cursos
+
+Sistema --> Estudiante : Mostrar cursos
+
+Estudiante -> Sistema : Seleccionar cursos
+
+Sistema -> Curso : Validar prerrequisitos
+Curso --> Sistema : Correcto
+
+Sistema -> Curso : Verificar cupos
+Curso --> Sistema : Cupos disponibles
+
+Sistema -> Curso : Validar horario
+Curso --> Sistema : Sin conflictos
+
+Sistema -> Matricula : Registrar matrícula
+Matricula --> Sistema : Matrícula registrada
+
+Sistema --> Estudiante : Confirmación
+
+@enduml

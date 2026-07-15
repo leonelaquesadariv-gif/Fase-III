@@ -1,0 +1,39 @@
+@startuml
+title Diagrama de Componentes - Sistema de Matrícula Universitaria
+
+skinparam componentStyle rectangle
+
+package "Sistema de Matrícula Universitaria" {
+
+component "Interfaz Web" as Web
+
+component "Autenticación" as Auth
+component "Gestión de Estudiantes" as Est
+component "Gestión de Cursos" as Cursos
+component "Gestión de Matrícula" as Matricula
+component "Gestión de Horarios" as Horarios
+component "Reportes" as Reportes
+
+database "Base de Datos" as DB
+
+}
+
+Web --> Auth
+Web --> Est
+Web --> Cursos
+Web --> Matricula
+Web --> Horarios
+Web --> Reportes
+
+Auth --> DB
+Est --> DB
+Cursos --> DB
+Matricula --> DB
+Horarios --> DB
+Reportes --> DB
+
+Matricula --> Cursos : Consulta cursos
+Matricula --> Horarios : Verifica horarios
+Matricula --> Est : Consulta estudiante
+
+@enduml

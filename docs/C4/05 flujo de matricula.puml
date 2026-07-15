@@ -1,0 +1,23 @@
+@startuml
+title SIMU -  Matrícula
+start
+:Iniciar sesión;
+:Consultar cursos;
+:Seleccionar cursos;
+if (¿Cumple prerrequisitos?) then (Sí)
+  if (¿Hay cupos?) then (Sí)
+    if (¿Existe choque de horario?) then (Sí)
+      :Mostrar conflicto;
+    else (No)
+      :Registrar matrícula;
+      :Actualizar horario;
+      :Mostrar confirmación;
+    endif
+  else (No)
+    :Mostrar grupo lleno;
+  endif
+else (No)
+  :Mostrar prerrequisito incumplido;
+endif
+stop
+@enduml
