@@ -1,11 +1,5 @@
 # Checklist de revisión del expediente
 
-**Proyecto:** SIMU – Sistema Integral de Matrícula Universitaria
-**Documento:** Documentación complementaria – Checklist de revisión
-**Versión:** 1.0 · **Fecha:** 14/07/2026
-
-Lista de verificación que el Integrante 5 aplica a **cada documento** del expediente antes de marcarlo como consolidado. Se completa una copia de la tabla por documento revisado.
-
 ---
 
 ## 1. Ortografía y redacción
@@ -14,7 +8,7 @@ Lista de verificación que el Integrante 5 aplica a **cada documento** del exped
 - [ ] Redacción formal e impersonal, coherente con el resto del expediente.
 - [ ] El nombre del sistema aparece correctamente: “SIMU – Sistema Integral de Matrícula Universitaria”.
 - [ ] Sin párrafos duplicados, frases incompletas ni texto de plantilla olvidado.
-- [ ] Términos técnicos definidos en el [glosario](01-glosario.md); si falta alguno, agregarlo.
+- [ ] Términos técnicos definidos en el [glosario](03_Glosario.md);
 
 ## 2. Numeración e identificadores
 
@@ -27,16 +21,15 @@ Lista de verificación que el Integrante 5 aplica a **cada documento** del exped
 
 - [ ] Toda mención a un requisito o historia usa su identificador (por ejemplo, RF04, HU02).
 - [ ] Los enlaces internos entre documentos funcionan (rutas relativas correctas).
-- [ ] Las fuentes externas están citadas en el texto (autor, año) y listadas en [06-referencias.md](06-referencias.md) en APA 7.
+- [ ] Las fuentes externas están citadas en el texto (autor, año) y listadas en [04_Referencias.md](04_Referencias.md) en APA 7.
 - [ ] Las imágenes o diagramas exportados existen en la carpeta correspondiente y se visualizan.
 
 ## 4. Formato Markdown
 
-- [ ] Encabezado estándar del proyecto al inicio (proyecto, documento, versión, fecha).
 - [ ] Un solo título de nivel 1; jerarquía de encabezados correcta (sin saltar de `##` a `####`).
 - [ ] Tablas bien formadas (se renderizan correctamente en el visor de Git).
-- [ ] Bloques de código con lenguaje indicado (```mermaid, ```plantuml, ```markdown).
-- [ ] Nombre del archivo en minúsculas, sin espacios ni tildes.
+- [ ] Bloques de código con lenguaje indicado (```mermaid, ``` ``` plantuml, ``` ```markdown```).
+- [ ] Nombre del archivo sin espacios ni tildes.
 
 ## 5. Consistencia con la Fase I
 
@@ -55,11 +48,9 @@ Lista de verificación que el Integrante 5 aplica a **cada documento** del exped
 | 14/07/2026 | docs/02-preguntas-frecuentes.md | Integrante 5 | ✅ Aprobado | Autorrevisión inicial |
 | 14/07/2026 | docs/03-convenciones-y-estilo.md | Integrante 5 | ✅ Aprobado | Autorrevisión inicial |
 | 14/07/2026 | docs/04-matriz-consistencia-fase1.md | Integrante 5 | ✅ Aprobado | Se registraron 2 hallazgos de la Fase I |
-| — | README.md | Integrante 1 | ⬜ Pendiente | |
-| — | diagramas/ | Integrante 2 | ⬜ Pendiente | |
-| — | arquitectura/ | Integrante 3 | ⬜ Pendiente | |
-| — | adr/ | Integrante 4 | ⬜ Pendiente | |
+| — | README.md | Integrante 1 |  ✅ Aprobado | |
+| — | diagramas/ | Integrante 2 | ✅ Aprobado| |
+| — | arquitectura/ | Integrante 3 | ✅ Aprobado | |
+| — | adr/ | Integrante 4 | ✅ Aprobado | |
 
 ---
-
-*Documento elaborado por el Integrante 5 (Documentación técnica y revisión).*

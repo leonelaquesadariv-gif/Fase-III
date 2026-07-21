@@ -1,10 +1,6 @@
 # Glosario
 
-**Proyecto:** SIMU – Sistema Integral de Matrícula Universitaria
-**Documento:** Documentación complementaria – Glosario
-**Versión:** 1.0 · **Fecha:** 14/07/2026
-
-Este glosario define los términos del dominio académico y de la documentación técnica utilizados en el expediente del proyecto. Está dirigido a todas las audiencias identificadas en la Fase I, en especial a quienes no poseen formación técnica.
+Este glosario define los términos del dominio académico y de la documentación técnica utilizados en el expediente del proyecto.
 
 ---
 
@@ -65,5 +61,3 @@ Este glosario define los términos del dominio académico y de la documentación
 | **Expediente final** | Conjunto consolidado de todos los documentos del proyecto (Fase I, diagramas, arquitectura, ADR y documentación complementaria). |
 
 ---
-
-*Documento elaborado por el Integrante 5 (Documentación técnica y revisión). Los términos marcados con referencias (RFxx, RNFxx, HUxx, CPxx) remiten a la Fase I del proyecto.*

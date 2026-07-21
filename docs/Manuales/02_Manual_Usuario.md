@@ -1,83 +1,81 @@
-# Preguntas frecuentes (FAQ)
+# Manual de Usuario 
 
-**Proyecto:** SIMU – Sistema Integral de Matrícula Universitaria
-**Documento:** Documentación complementaria – Preguntas frecuentes
-**Versión:** 1.0 · **Fecha:** 14/07/2026
+# Sistema Integral de Matrículas Universitarias (SIMU)
 
-Este documento responde las dudas más comunes de las audiencias definidas en la Fase I. Las respuestas se basan en los requisitos funcionales (RF), los requisitos no funcionales (RNF) y las historias de usuario (HU) del proyecto.
-
----
-
-## 1. Para estudiantes
-
-**¿Cómo ingreso al sistema?**
-Con su credencial institucional y contraseña. El sistema valida la identidad antes de permitir cualquier operación (RF01, HU01).
-
-**¿Qué necesito para registrarme?**
-Nombre, identificación, correo electrónico y contraseña. El sistema verifica que el correo no esté registrado previamente y confirma el registro con un mensaje (HU01).
-
-**¿Cómo sé qué cursos puedo matricular?**
-El sistema muestra la oferta de cursos disponibles según su carrera y el período académico vigente (RF02).
-
-**¿Por qué el sistema rechazó la matrícula de un curso?**
-Las causas más comunes son tres: no cumple los prerrequisitos del curso (RF03), el grupo ya no tiene cupos disponibles (RF04) o el curso choca de horario con otro que ya seleccionó (RF05). El sistema indica el motivo en cada caso.
-
-**¿Puedo cambiar mis cursos después de matricular?**
-Sí, durante el período de inclusiones puede agregar o eliminar cursos (RF06). Su horario se actualiza automáticamente después de cada cambio (HU04).
-
-**¿Dónde veo mi horario?**
-Después de iniciar sesión, en la sección de consulta de horario. Se muestran únicamente sus cursos matriculados, con nombre del curso, horario, aula y docente. Puede descargarlo o imprimirlo (RF08, HU04).
-
-**¿Es seguro ingresar mis datos personales?**
-Sí. Las contraseñas se almacenan cifradas mediante hash y todos los datos viajan protegidos con HTTPS/TLS (RNF04).
-
-**¿El sistema es difícil de usar?**
-No. Uno de los requisitos del proyecto es que un estudiante nuevo pueda completar su matrícula sin capacitación previa (RNF05).
-
-## 2. Para administradores académicos y personal de registro
-
-**¿Cómo gestiono la oferta de cursos?**
-El módulo de gestión de cursos permite crear, modificar y eliminar registros académicos, indicando nombre, código, horario y cantidad de cupos (RF07, HU03).
-
-**¿Puedo eliminar cualquier curso?**
-No. Solo pueden eliminarse cursos que no tengan estudiantes matriculados (HU03).
-
-**¿Cómo genero reportes de matrícula?**
-Seleccionando el período académico deseado; el sistema muestra la cantidad de estudiantes matriculados por curso y el total de matrículas del período. Los reportes se exportan en PDF o Excel (RF09, HU05).
-
-**¿Quién puede acceder a las funciones administrativas?**
-Únicamente los usuarios con rol de administrador (HU03, HU05).
-
-## 3. Para docentes y coordinadores
-
-**¿Qué información puedo consultar?**
-Los docentes pueden consultar las listas de estudiantes matriculados, los horarios asignados y los grupos activos de sus cursos. Los coordinadores pueden revisar la oferta académica, los cupos disponibles y el avance de la matrícula de su carrera (ver la sección “Audiencias” de la Fase I).
-
-## 4. Para el equipo técnico y soporte
-
-**¿Qué rendimiento debe garantizar el sistema?**
-Responder cualquier solicitud de matrícula en menos de 3 segundos (RNF01) y soportar al menos 2 000 usuarios concurrentes el primer día de matrícula sin degradarse (RNF02).
-
-**¿Qué disponibilidad se exige?**
-99,5 % durante el período de matrícula (RNF03).
-
-**¿En qué navegadores funciona el sistema?**
-En Chrome, Edge y Firefox, en sus dos últimas versiones (RNF06).
-
-**¿Dónde encuentro la documentación técnica?**
-La arquitectura del sistema se documenta con el Modelo C4 (carpeta `arquitectura/`), las decisiones técnicas en los ADR (carpeta `adr/`) y los diagramas UML en la carpeta `diagramas/`. Ver el [índice del expediente](00-indice-expediente-final.md).
-
-## 5. Sobre el proyecto y su documentación
-
-**¿Qué problema resuelve el SIMU?**
-Automatiza el proceso de matrícula universitaria para eliminar filas, errores de inscripción, conflictos de horario, sobrecupos y demoras en la validación de requisitos académicos (ver justificación de la Fase I).
-
-**¿Dónde se define qué debe hacer el sistema?**
-En la Fase I: nueve requisitos funcionales (RF01 – RF09), seis requisitos no funcionales (RNF01 – RNF06) y cinco historias de usuario con criterios de aceptación (HU01 – HU05).
-
-**¿Cómo se verifica que los requisitos estén cubiertos?**
-Mediante la matriz de trazabilidad de la Fase I, que relaciona cada requisito con su historia de usuario y su caso de prueba (CP01 – CP09).
+# 1. Introducción 
+El presente Manual de Usuario tiene como propósito orientar a los usuarios en el uso del Sistema Integral de Matrículas Universitarias (SIMU). En este documento se describen las principales funciones del sistema y los procedimientos para realizar las operaciones más comunes de manera sencilla y segura. 
 
 ---
+# 2. Objetivo
+Brindar una guía práctica para que estudiantes y administradores utilicen correctamente el sistema, permitiendo realizar los procesos de matrícula, consulta de información académica y gestión administrativa de forma eficiente. 
 
-*Documento elaborado por el Integrante 5 (Documentación técnica y revisión).*
+---
+# 3.  Usuarios del sistema
+El sistema está dirigido a dos tipos de usuarios:
+- Estudiantes: Puede consultar cursos, realizar la matrícula, consultar y descargar su horario. 
+- Administrador: Administra cursos, horarios, cupos y genera reportes académicos.
+
+# 4. Acceso al sistema
+- 1. Abrir el navegador web. 
+- 2. Ingresar a la plataforma SIMU.
+- 3. Escribir el usuario y la contraseña. 
+- 4. Presionar Iniciar sesión. 
+Si los datos son correctos, el sistema mostrará el menú principal correspondiente al rol del usuario. 
+
+# 5. Funciones del estudiante
+### Consultar oferta académica 
+El estudiante puede visualizar los cursos disponibles para el periodo académico correspondiente. 
+### Pasos:
+- 1. Seleccionar la opción Oferta Académica. 
+- 2. Elegir carrera y período.
+- 3. Consultar los cursos disponibles. 
+
+### Realizar matrícula
+El sistema permite inscribir uno o varios cursos. 
+### Procedimiento: 
+- 1. Seleccionar Matrícula.
+- 2. Elegir los cursos deseados.
+- 3. Confirmar la inscripción 
+Antes de registrar la matrícula, el sistema valida:
+- Prerrequisitos. 
+- Disponibilidad de cupos. 
+- Conflictos de horario. 
+Si la validación es correcta, la mtrícula queda registrada. 
+
+### Consultar horario 
+Después de matricular los cursos, el estudiante puede consultar su horario. 
+La información mostrará:
+- Nombre del curso. 
+- Horario. 
+- Aula.
+- Docente asignado.
+
+# 6. Funciones del administrador
+El administrador dispone de herramientas para gestioanr la información académica.
+Entre sus funciones principales se encuentran: 
+- Registrar nuevos cursos. 
+- Modificar información de cursos. 
+- Eliminar cupos sin estudiantes matrículados.
+- Administrar cupos disponibles. 
+- Generar reportes de matrícula. 
+- Exportar reportes en formato PDF o Excel. 
+
+# 7. Mensajes comunes del sistema
+| Mensaje | Acción recomendada|
+|---------|--------------------|
+| Usuario o contraseña incorrectos | Verificar las credenciales e intentar nuevamente. |
+| El curso no tiene cupos disponibles | Seleccionar otro grupo o esperar disponibilidad. |
+| Existen conflictos de horarios | Elegir un curso con un horario diferente |
+| No cumple con los prerrequisitos  | Completar previamente las asignaturas requeridas. | 
+
+# 8. Recomendaciones de uso.
+- Mantener la contraseña protegida y no compartida. 
+- Cerrar la sesión al finalizar el uso del sistema. 
+- Verificar cuidadosamente los cursos antes de confirmar la matrícula. 
+- Utilizar navegadores compatibles y actualizados para un mejor funcionamiento. 
+
+# 9. Mantenimiento
+En caso de presentar incovenientes durante el uso del sistema, el usuario deberá comunicarse con el departamente de Registro Académico o con el área de soporte técnico de la universidad, indicando el problema presentado para recibir asistencia. 
+
+#  Conclusión
+El Sistema Integral de Matrícula Universitaria (SIMU) facilita la gestión de los procesos académicos al permitir que estudiantes y administradores realicen sus actividades de manera rápida, organizada y segura. 

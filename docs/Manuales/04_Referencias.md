@@ -1,11 +1,6 @@
 # Referencias
 
-**Proyecto:** SIMU – Sistema Integral de Matrícula Universitaria
-**Documento:** Documentación complementaria – Referencias bibliográficas
-**Versión:** 1.0 · **Fecha:** 14/07/2026
-
-Bibliografía y recursos consultados para la elaboración del expediente, en formato APA 7.ª edición. Cada integrante debe agregar aquí las fuentes que utilice en su parte, manteniendo el orden alfabético.
-
+Bibliografía y recursos consultados para la elaboración del expediente, en formato APA 7.ª edición.
 ---
 
 ## 1. Libros y literatura de ingeniería de software
@@ -27,8 +22,6 @@ Bibliografía y recursos consultados para la elaboración del expediente, en for
 
 ## 4. Documentos internos del proyecto
 
-- Canales Obando, S., Quesada Rivera, L., Montero Leiva, J., Castro Chavarría, J., & Zeledón Martínez, J. D. (2026). *Fase 1, proyecto SIMU – Sistema Integral de Matrícula Universitaria* [Documento de curso]. Documentación de Software.
+- Canales Obando, S., Quesada Rivera, L., Castro Chavarría, J., & Zeledón Martínez, J. D. (2026). *Fase 1, proyecto SIMU – Sistema Integral de Matrícula Universitaria* [Documento de curso]. Documentación de Software.
 
 ---
-
-*Documento elaborado por el Integrante 5 Jeferson Castro Chavarria(Documentación técnica y revisión). Verificar los enlaces antes de la entrega final.*
