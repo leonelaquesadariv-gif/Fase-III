@@ -28,23 +28,23 @@ Proporcionar la información necesaria para que un desarrollador pueda comprende
 
 # 4. Arquitectura del sistema 
 El sistema está organizado en tres capas principales:
-- Capa de presentación: Interfaz gráfica donde interactúan estudiantes y administradores.
-- Capa de lógica de negocios: Procesa las reglas del sistema, como validación de usuarios, prerrequisitos, cupos y horarios. 
-- Capa de datos: Almacena la información de estudiantes, cursos, docentes, horarios y matrículas. 
+- **Capa de presentación:** Interfaz gráfica donde interactúan estudiantes y administradores.
+- **Capa de lógica de negocios:** Procesa las reglas del sistema, como validación de usuarios, prerrequisitos, cupos y horarios. 
+- **Capa de datos:** Almacena la información de estudiantes, cursos, docentes, horarios y matrículas. 
 
 
 ---
 # 5. Módulos del sistema 
 El SIMU está compuesto por los siguientes módulos: 
-### Autenticación
+### **Autenticación**
 Permite el acceso seguro mediante usuarios y contraseñas. 
-### Gestión de Matrícula 
+### **Gestión de Matrícula** 
 - Consulta de cursos. 
 - Validación de prerrequisitos.
 - Verificación de cupos. 
 - Detección de conflictos de horario. 
 - Confirmación de matrícula. 
-### Gestión Académica 
+### **Gestión Académica** 
 Permite el administrador crear, modificar y eliminar cursos, así como administrar horarios y cupos. 
 
 ---

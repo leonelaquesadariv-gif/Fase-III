@@ -12,8 +12,8 @@ Brindar una guía práctica para que estudiantes y administradores utilicen corr
 ---
 # 3.  Usuarios del sistema
 El sistema está dirigido a dos tipos de usuarios:
-- Estudiantes: Puede consultar cursos, realizar la matrícula, consultar y descargar su horario. 
-- Administrador: Administra cursos, horarios, cupos y genera reportes académicos.
+- **Estudiantes:** Puede consultar cursos, realizar la matrícula, consultar y descargar su horario. 
+- **Administrador:** Administra cursos, horarios, cupos y genera reportes académicos.
 
 # 4. Acceso al sistema
 - 1. Abrir el navegador web. 
@@ -35,12 +35,14 @@ El sistema permite inscribir uno o varios cursos.
 ### Procedimiento: 
 - 1. Seleccionar Matrícula.
 - 2. Elegir los cursos deseados.
-- 3. Confirmar la inscripción 
+- 3. Confirmar la inscripción.
+
 Antes de registrar la matrícula, el sistema valida:
 - Prerrequisitos. 
 - Disponibilidad de cupos. 
-- Conflictos de horario. 
-Si la validación es correcta, la mtrícula queda registrada. 
+- Conflictos de horario. .
+
+Si la validación es correcta, la matrícula queda registrada. 
 
 ### Consultar horario 
 Después de matricular los cursos, el estudiante puede consultar su horario. 
@@ -51,7 +53,7 @@ La información mostrará:
 - Docente asignado.
 
 # 6. Funciones del administrador
-El administrador dispone de herramientas para gestioanr la información académica.
+El administrador dispone de herramientas para gestionar la información académica.
 Entre sus funciones principales se encuentran: 
 - Registrar nuevos cursos. 
 - Modificar información de cursos. 
@@ -76,6 +78,4 @@ Entre sus funciones principales se encuentran:
 
 # 9. Mantenimiento
 En caso de presentar incovenientes durante el uso del sistema, el usuario deberá comunicarse con el departamente de Registro Académico o con el área de soporte técnico de la universidad, indicando el problema presentado para recibir asistencia. 
-
-#  Conclusión
-El Sistema Integral de Matrícula Universitaria (SIMU) facilita la gestión de los procesos académicos al permitir que estudiantes y administradores realicen sus actividades de manera rápida, organizada y segura. 
+ 
