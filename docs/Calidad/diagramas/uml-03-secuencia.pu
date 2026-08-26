@@ -1,0 +1,43 @@
+@startuml
+title SIMU - Secuencia de matrícula de cursos
+
+actor Estudiante
+boundary "Aplicación Web" as Web
+control "Servicio de Autenticación" as Auth
+control "Servicio de Cursos" as Cursos
+control "Servicio de Matrícula" as Matricula
+control "Servicio de Validación" as Validacion
+database "MySQL" as DB
+
+Estudiante -> Web : Iniciar sesión
+Web -> Auth : autenticar(credenciales)
+Auth -> DB : buscarUsuario()
+DB --> Auth : usuario / resultado
+Auth --> Web : acceso autorizado
+
+Estudiante -> Web : Consultar oferta
+Web -> Cursos : obtenerOferta(periodo)
+Cursos -> DB : consultarCursosYGrupos()
+DB --> Cursos : oferta disponible
+Cursos --> Web : lista de cursos
+Web --> Estudiante : Mostrar oferta
+
+Estudiante -> Web : Seleccionar grupo
+Web -> Matricula : solicitarMatricula(estudiante, grupo)
+Matricula -> Validacion : validar(estudiante, grupo)
+Validacion -> DB : consultar prerrequisitos,\ncupos y horarios
+DB --> Validacion : datos de validación
+
+alt Validación correcta
+  Validacion --> Matricula : aprobado
+  Matricula -> DB : guardar matrícula\ny actualizar cupo
+  DB --> Matricula : operación confirmada
+  Matricula --> Web : matrícula registrada
+  Web --> Estudiante : Mostrar confirmación
+else Validación rechazada
+  Validacion --> Matricula : motivo de rechazo
+  Matricula --> Web : error de validación
+  Web --> Estudiante : Mostrar motivo
+end
+
+@enduml

@@ -1,0 +1,43 @@
+@startuml
+title SIMU - Modelo C4 Nivel 3: Componentes del Backend
+
+top to bottom direction
+skinparam componentStyle rectangle
+
+component "Aplicación Web" as Web
+
+rectangle "Backend SIMU - Spring Boot" {
+  component "Controlador de Autenticación" as CAuth
+  component "Servicio de Usuarios" as SUsuarios
+  component "Servicio de Cursos y Grupos" as SCursos
+  component "Servicio de Matrícula" as SMatricula
+  component "Servicio de Validación" as SValidacion
+  component "Servicio de Horarios" as SHorarios
+  component "Servicio de Reportes" as SReportes
+  component "Repositorios / DAO" as Repo
+}
+
+database "MySQL" as DB
+
+Web --> CAuth
+Web --> SUsuarios
+Web --> SCursos
+Web --> SMatricula
+Web --> SHorarios
+Web --> SReportes
+
+CAuth --> SUsuarios
+SMatricula --> SValidacion
+SValidacion --> SCursos
+SValidacion --> SHorarios
+
+SUsuarios --> Repo
+SCursos --> Repo
+SMatricula --> Repo
+SValidacion --> Repo
+SHorarios --> Repo
+SReportes --> Repo
+
+Repo --> DB
+
+@enduml

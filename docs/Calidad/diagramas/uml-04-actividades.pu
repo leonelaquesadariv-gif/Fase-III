@@ -1,0 +1,27 @@
+@startuml
+title SIMU - Actividad de matrícula de cursos
+
+start
+:Iniciar sesión;
+:Consultar oferta académica;
+:Seleccionar curso o grupo;
+
+if (¿Cumple prerrequisitos?) then (Sí)
+  if (¿Hay cupo disponible?) then (Sí)
+    if (¿Existe choque de horario?) then (Sí)
+      :Mostrar error de horario;
+    else (No)
+      :Registrar matrícula;
+      :Actualizar cupo;
+      :Actualizar horario del estudiante;
+      :Mostrar confirmación;
+    endif
+  else (No)
+    :Mostrar grupo lleno;
+  endif
+else (No)
+  :Mostrar prerrequisito incumplido;
+endif
+
+stop
+@enduml

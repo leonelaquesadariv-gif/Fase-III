@@ -1,0 +1,48 @@
+@startuml
+title SIMU - Diagrama de Componentes
+
+skinparam componentStyle rectangle
+top to bottom direction
+
+package "Capa de Presentación" {
+  component "Interfaz Web" as Web
+}
+
+package "Capa de Lógica de Negocio\nSpring Boot" {
+  component "Autenticación" as Auth
+  component "Usuarios" as Usuarios
+  component "Cursos y Grupos" as Cursos
+  component "Matrícula" as Matricula
+  component "Validaciones" as Validacion
+  component "Horarios" as Horarios
+  component "Reportes" as Reportes
+}
+
+package "Capa de Acceso a Datos" {
+  component "Repositorios / DAO" as DAO
+}
+
+database "MySQL" as DB
+
+Web --> Auth
+Web --> Usuarios
+Web --> Cursos
+Web --> Matricula
+Web --> Horarios
+Web --> Reportes
+
+Matricula --> Validacion
+Validacion --> Cursos
+Validacion --> Horarios
+
+Auth --> DAO
+Usuarios --> DAO
+Cursos --> DAO
+Matricula --> DAO
+Validacion --> DAO
+Horarios --> DAO
+Reportes --> DAO
+
+DAO --> DB
+
+@enduml

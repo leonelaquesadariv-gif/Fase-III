@@ -1,0 +1,19 @@
+@startuml
+title SIMU - Diagrama de Estados de una Matrícula
+
+[*] --> Pendiente
+
+Pendiente --> Validando : Enviar selección
+Validando --> Rechazada : Prerrequisito incumplido
+Validando --> Rechazada : Grupo sin cupo
+Validando --> Rechazada : Choque de horario
+Validando --> Confirmada : Validación correcta
+
+Rechazada --> Pendiente : Corregir selección
+Confirmada --> Modificada : Agregar / eliminar curso
+Modificada --> Validando : Validar cambios
+Confirmada --> Finalizada : Cierre del período
+
+Finalizada --> [*]
+
+@enduml

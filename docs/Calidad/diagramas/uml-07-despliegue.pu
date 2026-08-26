@@ -1,0 +1,29 @@
+@startuml
+title SIMU - Diagrama de Despliegue de Referencia
+
+node "Dispositivo del Usuario" as Client {
+  artifact "Navegador Web\nChrome / Edge / Firefox" as Browser
+}
+
+cloud "Internet\nHTTPS/TLS" as Internet
+
+node "Servidor de Aplicaciones" as AppServer {
+  artifact "SIMU\nJava + Spring Boot" as SIMU
+  component "Presentación Web" as Presentacion
+  component "Lógica de Negocio" as Negocio
+  component "Acceso a Datos" as Datos
+
+  SIMU -- Presentacion
+  Presentacion --> Negocio
+  Negocio --> Datos
+}
+
+node "Servidor de Base de Datos" as DBServer {
+  database "MySQL" as MySQL
+}
+
+Browser --> Internet
+Internet --> SIMU
+Datos --> MySQL
+
+@enduml

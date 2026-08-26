@@ -1,0 +1,26 @@
+@startuml
+title SIMU - Flujo principal de matrícula
+
+start
+:Iniciar sesión;
+:Consultar oferta de cursos;
+:Seleccionar curso o grupo;
+
+if (¿Cumple prerrequisitos?) then (Sí)
+  if (¿Hay cupo disponible?) then (Sí)
+    if (¿Existe choque de horario?) then (Sí)
+      :Mostrar conflicto de horario;
+    else (No)
+      :Registrar matrícula;
+      :Actualizar cupos y horario;
+      :Generar confirmación;
+    endif
+  else (No)
+    :Mostrar grupo sin cupo;
+  endif
+else (No)
+  :Mostrar prerrequisito incumplido;
+endif
+
+stop
+@enduml

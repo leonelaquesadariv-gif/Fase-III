@@ -1,0 +1,19 @@
+@startuml
+title SIMU - Modelo C4 Nivel 2: Contenedores
+
+left to right direction
+skinparam componentStyle rectangle
+
+actor "Usuario\n(Estudiante, Administrador o Docente)" as Usuario
+
+rectangle "Sistema SIMU" {
+  component "Aplicación Web\nHTML/CSS/JavaScript" as Web
+  component "Backend / API\nJava + Spring Boot" as Backend
+  database "Base de Datos\nMySQL" as DB
+}
+
+Usuario --> Web : Usa mediante navegador
+Web --> Backend : Solicitudes HTTPS
+Backend --> DB : Lee y persiste datos\nmediante acceso a datos
+
+@enduml

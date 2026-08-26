@@ -1,0 +1,84 @@
+@startuml
+title Sistema Integral de Matrícula Universitaria - Diagrama de Clases
+
+skinparam classAttributeIconSize 0
+
+abstract class Usuario {
+  -id: int
+  -nombre: String
+  -correo: String
+  -contrasenaHash: String
+  +iniciarSesion()
+}
+
+class Estudiante {
+  -carnet: String
+  -carrera: String
+  +consultarOferta()
+  +matricular()
+  +consultarHorario()
+}
+
+class Administrador {
+  +gestionarCursos()
+  +gestionarGrupos()
+  +generarReporte()
+}
+
+class Docente {
+  -identificacionEmpleado: String
+  +consultarGrupos()
+  +consultarHorario()
+  +consultarEstudiantes()
+}
+
+class Curso {
+  -codigo: String
+  -nombre: String
+  -creditos: int
+}
+
+class Grupo {
+  -idGrupo: int
+  -periodo: String
+  -cupoMaximo: int
+  -cupoDisponible: int
+  +verificarCupo(): boolean
+}
+
+class Horario {
+  -dia: String
+  -horaInicio: String
+  -horaFin: String
+  -aula: String
+}
+
+class Matricula {
+  -id: int
+  -fecha: Date
+  -estado: String
+  +registrar()
+  +modificar()
+}
+
+class DetalleMatricula {
+  -id: int
+  -estado: String
+}
+
+Usuario <|-- Estudiante
+Usuario <|-- Administrador
+Usuario <|-- Docente
+
+Curso "1" -- "0..*" Grupo
+Docente "1" -- "0..*" Grupo : imparte >
+Grupo "1" -- "1" Horario
+
+Estudiante "1" -- "0..*" Matricula
+Matricula "1" *-- "1..*" DetalleMatricula
+DetalleMatricula "*" --> "1" Grupo
+
+Administrador ..> Curso : gestiona >
+Administrador ..> Grupo : gestiona >
+
+@enduml

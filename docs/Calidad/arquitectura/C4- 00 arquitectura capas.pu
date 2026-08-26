@@ -1,0 +1,62 @@
+@startuml
+title SIMU - Arquitectura lógica de tres capas
+
+top to bottom direction
+skinparam componentStyle rectangle
+
+actor Estudiante
+actor Administrador
+actor Docente
+
+package "Capa de Presentación" {
+  component "Interfaz Web" as Web
+  component "Vistas de Estudiante" as VistaEst
+  component "Vistas de Administración" as VistaAdm
+  component "Vistas de Docente" as VistaDoc
+
+  Web --> VistaEst
+  Web --> VistaAdm
+  Web --> VistaDoc
+}
+
+package "Capa de Lógica de Negocio\nJava / Spring Boot" {
+  component "Autenticación y usuarios" as Auth
+  component "Gestión de cursos y grupos" as Cursos
+  component "Gestión de matrícula" as Matricula
+  component "Validación de prerrequisitos,\ncupos y horarios" as Validacion
+  component "Consulta de horarios" as Horarios
+  component "Reportes" as Reportes
+}
+
+package "Capa de Acceso a Datos" {
+  component "Repositorios / DAO" as DAO
+}
+
+database "MySQL\nUsuarios, cursos, grupos,\nhorarios y matrículas" as DB
+
+Estudiante --> VistaEst
+Administrador --> VistaAdm
+Docente --> VistaDoc
+
+VistaEst --> Auth
+VistaEst --> Matricula
+VistaEst --> Horarios
+
+VistaAdm --> Auth
+VistaAdm --> Cursos
+VistaAdm --> Reportes
+
+VistaDoc --> Auth
+VistaDoc --> Cursos
+VistaDoc --> Horarios
+
+Matricula --> Validacion
+Auth --> DAO
+Cursos --> DAO
+Matricula --> DAO
+Validacion --> DAO
+Horarios --> DAO
+Reportes --> DAO
+DAO --> DB
+
+@enduml
