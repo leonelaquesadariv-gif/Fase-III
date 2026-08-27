@@ -1,0 +1,34 @@
+@startuml
+title SIMU - Arquitectura general del sistema
+top to bottom direction
+skinparam componentStyle rectangle
+rectangle "Interfaz de usuario" {
+  component "Módulo del estudiante" as Est
+  component "Módulo del administrador" as Adm
+  component "Módulo del docente" as Doc
+}
+rectangle "Lógica del sistema" {
+  component "Inicio de sesión" as Login
+  component "Gestión de cursos" as Cursos
+  component "Proceso de matrícula" as Matricula
+  component "Validación de cupos y horarios" as Validacion
+  component "Consulta de horario" as Horario
+  component "Generación de reportes" as Reportes
+}
+database "Base de datos" as DB
+Est --> Login
+Est --> Matricula
+Est --> Horario
+Adm --> Login
+Adm --> Cursos
+Adm --> Reportes
+Doc --> Login
+Doc --> Horario
+Matricula --> Validacion
+Login --> DB
+Cursos --> DB
+Matricula --> DB
+Validacion --> DB
+Horario --> DB
+Reportes --> DB
+@enduml

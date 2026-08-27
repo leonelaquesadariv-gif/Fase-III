@@ -1,0 +1,11 @@
+@startuml
+title SIMU - Modelo C4 Nivel 1: Contexto
+left to right direction
+actor Estudiante
+actor Administrador
+actor Docente
+rectangle "SIMU\nSistema Integral de Matrícula Universitaria" as SIMU
+Estudiante --> SIMU : Consulta cursos, realiza matrícula\ny revisa su horario
+Administrador --> SIMU : Gestiona cursos, cupos\ny genera reportes
+Docente --> SIMU : Consulta cursos, horarios\ny estudiantes matriculados
+@enduml

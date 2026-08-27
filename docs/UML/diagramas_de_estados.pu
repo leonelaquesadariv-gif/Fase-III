@@ -1,0 +1,24 @@
+@startuml
+title Diagrama de Estados - Matrícula Universitaria
+
+[*] --> Pendiente
+
+Pendiente --> Validando : Seleccionar cursos
+
+Validando --> Rechazada : No cumple prerrequisitos
+Validando --> Rechazada : Grupo sin cupos
+Validando --> Rechazada : Choque de horario
+
+Validando --> Confirmada : Validación correcta
+
+Confirmada --> Modificada : Agregar o eliminar cursos
+
+Modificada --> Confirmada : Actualizar matrícula
+
+Confirmada --> Finalizada : Cierre del período académico
+
+Rechazada --> Pendiente : Intentar nuevamente
+
+Finalizada --> [*]
+
+@enduml

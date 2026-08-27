@@ -1,0 +1,62 @@
+@startuml
+title Sistema de Matrícula Universitaria - Diagrama de Clases
+
+class Usuario{
+-id:int
+-nombre:String
+-correo:String
+-contraseña:String
++iniciarSesion()
+}
+
+class Estudiante{
+-carnet:String
++cargarHorario()
++matricularCurso()
+}
+
+class Administrador{
++crearCurso()
++editarCurso()
++eliminarCurso()
++generarReporte()
+}
+
+class Curso{
+-codigo:String
+-nombre:String
+-creditos:int
+-cupos:int
++consultarDisponibilidad()
+}
+
+class Horario{
+-dia:String
+-horaInicio:String
+-horaFin:String
+-aula:String
+}
+
+class Matricula{
+-id:int
+-fecha:Date
++registrar()
++cancelar()
+}
+
+class Reporte{
+-periodo:String
++generarPDF()
++generarExcel()
+}
+
+Usuario <|-- Estudiante
+Usuario <|-- Administrador
+
+Estudiante "1" -- "0..*" Matricula
+Matricula "*" -- "1" Curso
+Curso "1" -- "1" Horario
+Administrador ..> Curso
+Administrador ..> Reporte
+
+@enduml
